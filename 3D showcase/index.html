@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="src/css/3d.css" />
+    <script
+      type="module"
+      src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"
+    ></script>
+
+    <script src="src/js/cambio.js"></script>
+    <title>Prueba 3D</title>
+  </head>
+
+  <body>
+    <div class="loading">
+    <div class="loadingio-spinner-rolling-dbziik4qkx8"><div class="ldio-ulg3ba1m6">
+      <div></div>
+      </div>
+    </div>
+    <div class="desktop">It is recommended that you use a desktop browser for the best experience.</div>
+    </div>
+    <div class="cuadradoabajo">
+      <div class="nombre">Camilo Lucero 2022.</div>
+      <div class="todotexto">
+        <div class="texto texto1"><a href="index.html">Home</a></div>
+        <div class="texto texto2"><a href="about.html">About</a></div>
+        <div class="texto texto3"><a href="https://www.linkedin.com/in/camilo-lucero-60355b175/">Linkedin</a></div>
+        <div class="texto texto4"><a href="">GitHub</a></div>
+      </div>
+    </div>
+
+    <div class="cuadrado">
+      <div class="imagen">
+        <img class="listaimg" src="src/assets/list.png" alt="lista" />
+        <div class="textoimg">More animations Soon!</div>
+      </div>
+      <div class="titulo">
+        <h1>Smith & Wesson Model 500</h1>
+      </div>
+    </div>
+
+    <div class="contenedor">
+      <model-viewer
+        class="modelnormal"
+        id="modelnormal"
+        src="src/assets/scene.gltf"
+        alt="VR Headset"
+        camera-controls
+        loading="eager"
+        disable-zoom
+        onclick="lastpos()"
+        interaction-prompt="none"
+        shadow-intensity="1"
+        disable-tap
+      >
+        <button
+          class="hotspot"
+          slot="hotspot-1"
+          data-position="-3.8593168556690287m 3.2953616305034004m -1.4080789159514993m"
+          data-normal="1m 0m 0m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">.500 S&W Magnum</div>
+        </button>
+        <button
+          class="hotspot"
+          slot="hotspot-2"
+          data-position="-11.598917997223438m 2.0170624637780854m -1.154521107673638m"
+          data-normal="0m 0m -1m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Cilinder Release</div>
+        </button>
+        <button
+          class="hotspot"
+          slot="hotspot-3"
+          data-position="-8.576479589132063m -2.2369760157689207m 0.38927483558655496m"
+          data-normal="0m 0m 1m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Trigger</div></button
+        ><button
+          class="hotspot"
+          slot="hotspot-4"
+          data-position="-16.123073309223326m -5.178266353028551m 1.2978657028741623m"
+          data-normal="-0.029365032947863m -0.09016600261161879m 0.9954937402178943m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Polymer Grip</div>
+        </button>
+
+        <button
+          class="hotspot"
+          slot="hotspot-5"
+          data-position="3.053795534646138m 2.9734884693210866m -0.22735895930780714m"
+          data-normal="1.0655692088221548e-16m 0.15643441565868044m -0.9876883484164058m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Ejector Rod</div>
+        </button>
+        <button
+          class="hotspot"
+          slot="hotspot-6"
+          data-position="16.18823609814894m 6.388355972949174m -0.14592579007148743m"
+          data-normal="0m 0m -1m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Front Sight</div>
+        </button>
+        <button
+          class="hotspot"
+          slot="hotspot-7"
+          data-position="-10.915553734799892m 6.6302791292839345m -0.1788214105616106m"
+          data-normal="0m 0m 1m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Rear Sight</div>
+        </button>
+        <button
+          class="hotspot"
+          slot="hotspot-8"
+          data-position="-12.98812719747117m 3.8045906622839656m 0.42254245281220193m"
+          data-normal="0m 0m 1m"
+          data-visibility-attribute="visible"
+        >
+          <div class="annotation">Hammer</div>
+        </button>
+      </model-viewer>
+
+      <model-viewer
+        class="modelrecarga"
+        id="modelrecarga"
+        src="src/assets/scene.gltf"
+        alt="VR Headset"
+        camera-controls
+        animation-name="Reload"
+        loading="eager"
+        disable-zoom
+        onclick="lastpos()"
+        interaction-prompt="none"
+        shadow-intensity="1"
+        disable-tap
+        animation-crossfade-duration="0"
+      >
+      </model-viewer>
+
+      <model-viewer
+        class="modeldispara"
+        id="modeldispara"
+        src="src/assets/scene.gltf"
+        alt="VR Headset"
+        camera-controls
+        animation-name="Fire"
+        loading="eager"
+        disable-zoom
+        onclick="lastpos()"
+        shadow-intensity="1"
+        interaction-prompt="none"
+        disable-tap
+      >
+      </model-viewer>
+      <div class="botones">
+        <button type="button" onclick="disparar()" class="dispara" id="dispara">
+          <img
+            class="img-btn-disp dispararimg"
+            src="src/assets/arm.png"
+            alt="disparar"
+          />
+        </button>
+        <button type="button" onclick="Normal()" class="normal" id="normal">
+          <img
+            class="img-btn-disp normalimg"
+            src="src/assets/information.png"
+            alt="Info"
+          />
+        </button>
+        <button
+          type="button"
+          onclick="recargar()"
+          class="recargar"
+          id="recargar"
+        >
+          <img
+            class="img-btn-disp recargarimg"
+            src="src/assets/arma.png"
+            alt="recargar"
+          />
+        </button>
+      </div>
+    </div>
+    
+  </body>
+</html>
+
+
+
+
